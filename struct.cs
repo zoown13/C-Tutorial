@@ -15,6 +15,14 @@ public struct Coords
     public override string ToString() => $"({X}, {Y})";
 }
 
+public class Point
+{
+    public int X { get; }
+    public int Y { get; }
+    
+    public Point(int x, int y) => (X, Y) = (x, y);
+}
+
 class StructWithNew
 {
     public static void Main()
@@ -24,5 +32,8 @@ class StructWithNew
         
         p.X = 5; p.Y = 7;
         Console.WriteLine(p.ToString()); // output: (5, 7)
+
+        Point i = new Point(5,5);
+        Console.WriteLine($"({i.X}, {i.Y})"); // output: (5,5)
     }
 }
